@@ -4,10 +4,7 @@ plugins {
 
 android {
 
-    compileOptions{
-        sourceCompatibility JavaVersion.current();
-        targetCompatibility JavaVersion.current();
-    }
+
     compileSdk 31
 
     defaultConfig {
@@ -44,7 +41,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     //exoplayer library
-    implementation 'com.google.android.exoplayer:exoplayer:2.9.6'
+
 
 
 }

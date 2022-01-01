@@ -8,9 +8,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.movies.VideoPlayer;
 import com.example.movies.models.Movie;
 import com.example.movies.adapters.MovieAdapter;
 import com.example.movies.adapters.MovieItemClickListener;
@@ -18,6 +20,7 @@ import com.example.movies.R;
 import com.example.movies.models.Slide;
 import com.example.movies.adapters.SliderPagerAdapter;
 import com.example.movies.utils.DataSource;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
     private ViewPager sliderpage;
     private TabLayout indicator;
     private RecyclerView MovieRv,rvMoviesWeek;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +86,13 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         indicator = findViewById(R.id.indicator);
         MovieRv = findViewById(R.id.rvMovies);
         rvMoviesWeek = findViewById(R.id.rvMoviesWeek);
+
+
+
     }
+
+
+
 
     @Override
     public void onMovieClick(Movie movie, ImageView movieImageView) {

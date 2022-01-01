@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.movies.R;
+import com.example.movies.VideoPlayer;
 import com.example.movies.adapters.CastAdapter;
 import com.example.movies.models.Cast;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -38,6 +41,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         setupRvCast();
 
 
+
     }
 
     void iniView(){
@@ -59,6 +63,21 @@ public class MovieDetailActivity extends AppCompatActivity {
         //setup Animation
         MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this,R.anim.scale_animation));
         play_fab.setAnimation(AnimationUtils.loadAnimation(this,R.anim.scale_animation));
+
+        //play video
+        play_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity2();
+            }
+        });
+
+
+    }
+
+    public void openActivity2(){
+        Intent intent = new Intent(this, VideoPlayer.class);
+        startActivity(intent);
     }
 
     void setupRvCast(){
@@ -73,4 +92,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         Rvcast.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
     }
+
+
 }
